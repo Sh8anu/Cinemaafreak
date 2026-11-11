@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import TerminalBoot from '@/components/TerminalBoot';
-import TerminalQuiz from '@/components/TerminalQuiz';
+import TerminalBoot from '@/components/terminalBoot';
+import TerminalQuiz from '@/components/terminalQuiz';
 
 export default function Home() {
   const [username, setUsername] = useState<string | null>(null);
