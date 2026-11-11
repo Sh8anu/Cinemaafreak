@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Roboto_Mono } from 'next/font/google';
-import './globals.css';
+import './global.css';
 
 // Load Roboto Mono directly through Next.js font optimization
 const robotoMono = Roboto_Mono({
