@@ -17,7 +17,7 @@ export default function TerminalQuiz({ username }: { username: string }) {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   // Form input states
-  const [singleGuess, setSingleGuess] = useState('');
+  const [guessSingle, setGuessSingle] = useState('');
   const [guessX, setGuessX] = useState('');
   const [guessY, setGuessY] = useState('');
   const [guessZ, setGuessZ] = useState('');
@@ -71,7 +71,7 @@ export default function TerminalQuiz({ username }: { username: string }) {
       setFeedback(`[SUCCESS]: +${result.aditiPoints} POINTS GRANTED.`);
       setTimeout(() => {
         setFeedback(null);
-        setSingleGuess('');
+        setGuessSingle('');
         setGuessX('');
         setGuessY('');
         setGuessZ('');
@@ -145,8 +145,8 @@ export default function TerminalQuiz({ username }: { username: string }) {
                     <input
                       type="text"
                       autoFocus
-                      value={singleGuess}
-                      onChange={(e) => setSingleGuess(e.target.value)}
+                      value={guessSingle}
+                      onChange={(e) => setGuessSingle(e.target.value)}
                       className="bg-transparent border-b border-terminal-dim outline-none text-terminal-green w-full"
                     />
                   </div>
