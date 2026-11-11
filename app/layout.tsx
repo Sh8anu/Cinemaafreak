@@ -1,32 +1,19 @@
 import type { Metadata, Viewport } from 'next';
-import { Roboto_Mono } from 'next/font/google';
 import './global.css';
-
-// Load Roboto Mono directly through Next.js font optimization
-const robotoMono = Roboto_Mono({
-  subsets: ['latin'],
-  variable: '--font-roboto-mono',
-  display: 'swap',
-  weight: ['400', '500', '700'],
-});
 
 export const metadata: Metadata = {
   title: 'CINEMAFREAKS // TTY_MAINFRAME',
   description: 'Classified terminal-based cinema decryption mainframe.',
   applicationName: 'CinemaFreaks OS',
-  keywords: ['cinema', 'trivia', 'movies', 'terminal', 'hollywood', 'indian cinema'],
-  authors: [{ name: 'CinemaFreaks Terminal' }],
-  robots: 'index, follow',
 };
 
-// Ensures mobile address bars and browser frames render in pitch OLED black
 export const viewport: Viewport = {
   themeColor: '#030303',
   colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  userScalable: false, // Prevents unintended pinch-zooming on mobile terminals
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -35,9 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${robotoMono.variable}`}>
+    <html lang="en" className="dark">
       <head>
-        {/* Fallback CRT Terminal scanline meta */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
